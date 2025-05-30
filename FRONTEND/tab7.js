@@ -1,35 +1,3 @@
-import { fetchAiResponse } from './fetchAiResponse.js';
-
-// Simple markdown parser function
-function parseMarkdown(text) {
-    // Convert headers
-    text = text.replace(/^### (.*$)/gm, '<h3>$1</h3>');
-    text = text.replace(/^## (.*$)/gm, '<h2>$1</h2>');
-    text = text.replace(/^# (.*$)/gm, '<h1>$1</h1>');
-
-    // Convert bold and italic
-    text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-    text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
-
-    // Convert lists
-    text = text.replace(/^\s*[-*+]\s+(.*$)/gm, '<li>$1</li>');
-    text = text.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
-
-    // Convert numbered lists
-    text = text.replace(/^\s*\d+\.\s+(.*$)/gm, '<li>$1</li>');
-    text = text.replace(/(<li>.*<\/li>)/gs, '<ol>$1</ol>');
-
-    // Convert links
-    text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-
-    // Convert paragraphs
-    text = text.replace(/^(?!<[a-z])(.*$)/gm, '<p>$1</p>');
-
-    // Clean up empty paragraphs
-    text = text.replace(/<p><\/p>/g, '');
-
-    return text;
-}
 
 // Parse flashcards from markdown content
 function parseFlashcards(content) {

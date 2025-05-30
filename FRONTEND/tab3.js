@@ -1,4 +1,3 @@
-import { captureAndAnalyzeFont } from './captureAndAnalyseFont.js';
 import { fetchAiResponse } from './fetchAiResponse.js';
 import { renderFontCards } from './renderFontCards.js';
 

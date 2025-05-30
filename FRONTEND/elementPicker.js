@@ -37,53 +37,6 @@ function createPopupForElement(el, text = 'Analyze this element?') {
     document.body.appendChild(popupDiv);
 }
 
-function createTranslationPopup(translation, language) {
-    removePopup();
-    const selection = window.getSelection();
-    const range = selection.getRangeAt(0);
-    const rect = range.getBoundingClientRect();
-
-    popupDiv = document.createElement('div');
-    popupDiv.style.position = 'fixed';
-    popupDiv.style.left = Math.min(rect.right + 10, window.innerWidth - 300) + 'px';
-    popupDiv.style.top = Math.max(rect.top, 10) + 'px';
-    popupDiv.style.background = '#fff';
-    popupDiv.style.border = '1.5px solid #0a5ecb';
-    popupDiv.style.borderRadius = '10px';
-    popupDiv.style.padding = '15px';
-    popupDiv.style.boxShadow = '0 4px 16px rgba(0,0,0,0.18)';
-    popupDiv.style.zIndex = 2147483647;
-    popupDiv.style.fontSize = '14px';
-    popupDiv.style.color = '#222';
-    popupDiv.style.maxWidth = '280px';
-    popupDiv.style.pointerEvents = 'none';
-
-    const content = document.createElement('div');
-    content.style.display = 'flex';
-    content.style.flexDirection = 'column';
-    content.style.gap = '10px';
-
-    // Add original text
-    const original = document.createElement('div');
-    original.style.borderBottom = '1px solid #eee';
-    original.style.paddingBottom = '8px';
-    original.innerHTML = `<strong>Original:</strong><br>${el.innerText}`;
-    content.appendChild(original);
-
-    // Add translation
-    const transDiv = document.createElement('div');
-    transDiv.style.borderBottom = '1px solid #eee';
-    transDiv.style.paddingBottom = '8px';
-    transDiv.innerHTML = `<strong>${language}:</strong><br>${translation.text}`;
-    if (translation.meaning) {
-        transDiv.innerHTML += `<br><em style="color: #666; font-size: 12px;">Meaning: ${translation.meaning}</em>`;
-    }
-    content.appendChild(transDiv);
-
-    popupDiv.appendChild(content);
-    document.body.appendChild(popupDiv);
-}
-
 function removePopup() {
     if (popupDiv) {
         popupDiv.remove();

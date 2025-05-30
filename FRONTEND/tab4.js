@@ -1,6 +1,5 @@
 import { generateVector } from './generateVector.js';
 import { fetchAiResponse } from './fetchAiResponse.js';
-import { analyzeCurrentTab } from './analyzeCurrentTab.js';
 
 export function initializeTab4() {
     console.log('Initializing Tab4...');
@@ -10,8 +9,6 @@ export function initializeTab4() {
     const vectorBtn = document.getElementById('VectorBtn');
     const generateIconForm = document.getElementById('generate-icon-form');
     const submitIcon = document.getElementById('submitIcon');
-    const loadingMessage = document.getElementById('loadingMessage');
-    const outputContainer = document.getElementById('analysisOutput');
 
     // State management
     let isVectorTabActive = false;
