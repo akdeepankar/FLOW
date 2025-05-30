@@ -120,34 +120,31 @@ export async function renderFontCards(fontLinks, container) {
                         }
                     `;
 
-                    // Send the command to apply the font
-                    const response = await fetch('http://localhost:5000/api/browser/execute', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            prompt: `Execute this JavaScript in the current tab:
-                                // First inject the font
-                                const link = document.createElement('link');
-                                link.href = '${fontUrl}';
-                                link.rel = 'stylesheet';
-                                document.head.appendChild(link);
-                                
-                                // Then apply the font
-                                const style = document.createElement('style');
-                                style.textContent = \`${css}\`;
-                                document.head.appendChild(style);
-                            `
-                        })
+                    // Get the active tab
+                    const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+                    
+                    // Inject the font using the scripting API
+                    await chrome.scripting.executeScript({
+                        target: { tabId: tab.id },
+                        func: (fontUrl, fontName, css) => {
+                            // First inject the font
+                            const link = document.createElement('link');
+                            link.href = fontUrl;
+                            link.rel = 'stylesheet';
+                            document.head.appendChild(link);
+
+                            // Then apply the font
+                            const style = document.createElement('style');
+                            style.textContent = css;
+                            document.head.appendChild(style);
+                        },
+                        args: [fontUrl, fontName, css]
                     });
 
-                    if (response.ok) {
-                        applyFontBtn.textContent = 'Font Applied!';
-                    } else {
-                        applyFontBtn.textContent = 'Failed to Apply';
-                    }
+                    applyFontBtn.textContent = 'Font Applied!';
                 } catch (error) {
                     console.error('Error applying font:', error);
-                    applyFontBtn.textContent = 'Error Applying Font';
+                    applyFontBtn.textContent = 'Failed to Apply';
                 }
 
                 setTimeout(() => {

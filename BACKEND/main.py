@@ -21,7 +21,6 @@ from razorpay_toolkit import RazorpayPaymentLink
 from razorpay_toolkit import RazorpayTrackerToolkit
 from agno.tools.resend import ResendTools
 from analyze_toolkit import AnalyzeToolkit  # Add this import
-from agno.tools.firecrawl import FirecrawlTools
 from agno.tools.website import WebsiteTools
 
 load_dotenv()
@@ -372,7 +371,7 @@ flashcard_agent = Agent(
     name="FlashcardGenerator",
     role="Generates educational flashcards from web content",
     model=OpenAIChat("gpt-4o"),
-    tools=[FirecrawlTools(scrape=False, crawl=True), WebsiteTools()],
+    tools=[WebsiteTools()],
     instructions="""
     FLASHCARD GENERATION PROTOCOL:
 

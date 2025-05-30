@@ -91,7 +91,13 @@ function createChatWindow() {
     header.style.alignItems = 'center';
     header.innerHTML = `
     <div style="display: flex; flex-direction: column; gap: 2px;">
-      <span style="font-size: 16px; font-weight: 600; color: #1a1a1a;">Flowy</span>
+      <span style="font-size: 16px; font-weight: 600; color: #1a1a1a; display: flex; align-items: center; gap: 6px;">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m10.051 8.102-3.778.322-1.994 1.994a.94.94 0 0 0 .533 1.6l2.698.316m8.39 1.617-.322 3.78-1.994 1.994a.94.94 0 0 1-1.595-.533l-.4-2.652m8.166-11.174a1.366 1.366 0 0 0-1.12-1.12c-1.616-.279-4.906-.623-6.38.853-1.671 1.672-5.211 8.015-6.31 10.023a.932.932 0 0 0 .162 1.111l.828.835.833.832a.932.932 0 0 0 1.111.163c2.008-1.102 8.35-4.642 10.021-6.312 1.475-1.478 1.133-4.77.855-6.385Zm-2.961 3.722a1.88 1.88 0 1 1-3.76 0 1.88 1.88 0 0 1 3.76 0Z"/>
+</svg>
+
+        Flowy
+      </span>
       <span style="font-size: 10px; color: #888; font-weight: 400;">Powered by Browser-use</span>
     </div>
     <div style="display: flex; gap: 8px; align-items: center;">
@@ -230,7 +236,7 @@ function createChatWindow() {
     document.body.appendChild(chatWindow);
 
     // Add welcome message
-    addMessage('assistant', 'Hello! I\'m your Flow assistant. I can help you with:\n• Answering questions about this page\n• Helping with Mails\n• Filling forms\n• Extracting data\n• Summarizing page content\n\nWhat would you like help with?');
+    addMessage('assistant', 'Hello! I\'m your Flowy. I can help you with:\n• Answering questions about this tab\n • Helping with Mails\n• Filling forms\n• Extracting data\n\nWhat would you like help with?');
 
     // Add event listeners
     header.addEventListener('mousedown', startDragging);
