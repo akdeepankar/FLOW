@@ -4,14 +4,14 @@ import { analyzeCurrentTab } from './analyzeCurrentTab.js';
 
 export function initializeTab4() {
     console.log('Initializing Tab4...');
-    
+
     // Get DOM elements
-    const loadingMessage3 = document.getElementById("loading-message3");
+    const loadingMessage3 = document.getElementById('loading-message3');
     const vectorBtn = document.getElementById('VectorBtn');
     const generateIconForm = document.getElementById('generate-icon-form');
     const submitIcon = document.getElementById('submitIcon');
-    const loadingMessage = document.getElementById("loadingMessage");
-    const outputContainer = document.getElementById("analysisOutput");
+    const loadingMessage = document.getElementById('loadingMessage');
+    const outputContainer = document.getElementById('analysisOutput');
 
     // State management
     let isVectorTabActive = false;
@@ -19,7 +19,7 @@ export function initializeTab4() {
     // Function to switch between tabs
     function switchTab(activeButton) {
         console.log('Switching to tab:', activeButton.id);
-        
+
         // Update button states
         document.querySelectorAll('#capture-container button').forEach(btn => {
             btn.classList.remove('active');
@@ -58,18 +58,17 @@ export function initializeTab4() {
         generateIconForm.style.display = 'block';
     });
 
-
     // Add event listeners to analysis buttons
-    
+
     // Handle icon submission
     submitIcon.addEventListener('click', async () => {
         const fontInput2 = document.getElementById('fontInput2').value;
-    
+
         if (!fontInput2) {
             alert('Please enter a design description.');
             return;
         }
-    
+
         loadingMessage3.style.display = 'block';
         loadingMessage3.innerHTML = `
             <div style="text-align: center; padding: 20px;">
@@ -91,12 +90,12 @@ export function initializeTab4() {
                 }
             </style>
         `;
-    
+
         try {
             const promptText = `Generate an SVG icon code based on the following description: "${fontInput2}"`;
             const result = await fetchAiResponse(promptText);
             const svgCode = extractSvgCode(result);
-            
+
             if (svgCode) {
                 console.log('Extracted SVG Code:', svgCode);
                 generateVector(svgCode);
@@ -114,11 +113,11 @@ export function initializeTab4() {
                         </span>
                     </div>`;
             } else {
-                loadingMessage3.innerHTML = `<p style="color: #dc3545; text-align: center;">No SVG code found in the generated text.</p>`;
+                loadingMessage3.innerHTML = '<p style="color: #dc3545; text-align: center;">No SVG code found in the generated text.</p>';
             }
         } catch (error) {
             console.error('Error generating SVG:', error);
-            loadingMessage3.innerHTML = `<p style="color: #dc3545; text-align: center;">An error occurred while generating the SVG.</p>`;
+            loadingMessage3.innerHTML = '<p style="color: #dc3545; text-align: center;">An error occurred while generating the SVG.</p>';
         }
     });
 
@@ -128,15 +127,13 @@ export function initializeTab4() {
         return svgMatch?.[0] || null;
     }
 
-
-
     // Initialize with no tab selected
     document.querySelectorAll('#capture-container button').forEach(btn => {
         btn.classList.remove('active');
         btn.style.backgroundColor = 'white';
         btn.style.color = 'black';
     });
-    
+
     // Hide all content initially
     generateIconForm.style.display = 'none';
     loadingMessage3.style.display = 'none';

@@ -4,7 +4,6 @@ import { initializeTab4 } from './tab4.js';
 import { initializeTab6 } from './tab6.js';
 import { initializeTab7 } from './tab7.js';
 
-
 document.addEventListener('DOMContentLoaded', function () {
     // Initialize all tabs
     initializeTab2();
@@ -43,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
             'saveSvgButton',
             'svgCodeDisplay'
         ];
-        
+
         elementsToHide.forEach(id => {
             const element = document.getElementById(id);
             if (element) {
@@ -56,7 +55,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const fontForm = document.getElementById('generate-font-form');
             const fontOutput = document.getElementById('analysisOutput1');
             const fontCardsContainer = document.querySelector('#tab3 > div[style*="display: flex"]');
-            
+
             if (fontForm) {
                 fontForm.style.display = 'block';
             }
@@ -100,6 +99,4 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set Tab 1 as default
     window.onload = () => switchTab(1);
 });
-
-
 

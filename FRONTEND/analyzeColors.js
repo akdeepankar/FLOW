@@ -19,7 +19,7 @@ async function fetchAiResponse(prompt) {
         return data.response;
     } catch (error) {
         console.error('Error fetching AI response from server:', error);
-        throw new Error("Failed to fetch AI response.");
+        throw new Error('Failed to fetch AI response.');
     }
 }
 
@@ -36,7 +36,7 @@ async function handleAiRequest(prompt) {
         aiResponseText.textContent = ''; // Clear previous response
 
         const result = await fetchAiResponse(prompt);
-        
+
         // Update the response text and show the result card
         aiResponseText.textContent = result;
         resultCard.style.display = 'block';
@@ -58,7 +58,7 @@ export async function analyzeColors(buttonId, promptSuffix) {
     });
 
     if (hexCodes.length === 0) {
-        alert("No colors in the palette to analyze.");
+        alert('No colors in the palette to analyze.');
         return;
     }
 

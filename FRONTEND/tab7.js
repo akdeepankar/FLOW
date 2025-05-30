@@ -6,28 +6,28 @@ function parseMarkdown(text) {
     text = text.replace(/^### (.*$)/gm, '<h3>$1</h3>');
     text = text.replace(/^## (.*$)/gm, '<h2>$1</h2>');
     text = text.replace(/^# (.*$)/gm, '<h1>$1</h1>');
-    
+
     // Convert bold and italic
     text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    
+
     // Convert lists
     text = text.replace(/^\s*[-*+]\s+(.*$)/gm, '<li>$1</li>');
     text = text.replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>');
-    
+
     // Convert numbered lists
     text = text.replace(/^\s*\d+\.\s+(.*$)/gm, '<li>$1</li>');
     text = text.replace(/(<li>.*<\/li>)/gs, '<ol>$1</ol>');
-    
+
     // Convert links
     text = text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-    
+
     // Convert paragraphs
     text = text.replace(/^(?!<[a-z])(.*$)/gm, '<p>$1</p>');
-    
+
     // Clean up empty paragraphs
     text = text.replace(/<p><\/p>/g, '');
-    
+
     return text;
 }
 
@@ -35,28 +35,28 @@ function parseMarkdown(text) {
 function parseFlashcards(content) {
     console.log('Parsing flashcards from content:', content);
     const cards = [];
-    
+
     // Find all card sections using a more flexible pattern
     const cardMatches = content.match(/Card \d+:(.*?)(?=Card \d+:|$)/gs);
-    
+
     if (!cardMatches) {
         console.log('No card matches found');
         return cards;
     }
-    
+
     cardMatches.forEach((section, index) => {
         // Extract front and back content
         const frontMatch = section.match(/Front:(.*?)(?=Back:|$)/s);
         const backMatch = section.match(/Back:(.*?)(?=Card \d+:|$)/s);
-        
+
         if (!frontMatch || !backMatch) {
             console.log('Skipping invalid card format:', section);
             return;
         }
-        
+
         const front = frontMatch[1].trim();
         const backContent = backMatch[1].trim();
-        
+
         // Process back content
         const backSections = {
             definition: '',
@@ -64,32 +64,32 @@ function parseFlashcards(content) {
             examples: [],
             context: ''
         };
-        
+
         // Parse back sections with more flexible matching
         const definitionMatch = backContent.match(/### Definition\s*([\s\S]*?)(?=### |$)/i);
         if (definitionMatch) {
             backSections.definition = definitionMatch[1].trim();
         }
-        
+
         const keyPointsMatch = backContent.match(/### Key Points\s*([\s\S]*?)(?=### |$)/i);
         if (keyPointsMatch) {
             backSections.keyPoints = keyPointsMatch[1].split('\n')
                 .filter(line => line.trim().startsWith('-'))
                 .map(line => line.trim().substring(1).trim());
         }
-        
+
         const examplesMatch = backContent.match(/### Examples\s*([\s\S]*?)(?=### |$)/i);
         if (examplesMatch) {
             backSections.examples = examplesMatch[1].split('\n')
                 .filter(line => line.trim().startsWith('-'))
                 .map(line => line.trim().substring(1).trim());
         }
-        
+
         const contextMatch = backContent.match(/### Additional Context\s*([\s\S]*?)(?=### |$)/i);
         if (contextMatch) {
             backSections.context = contextMatch[1].trim();
         }
-        
+
         // Format the back content
         const formattedBack = `
             <div class="flashcard-sections">
@@ -126,21 +126,21 @@ function parseFlashcards(content) {
                 ` : ''}
             </div>
         `;
-        
+
         cards.push({
             number: index + 1,
             front: front,
             back: formattedBack
         });
     });
-    
+
     console.log('Parsed cards:', cards);
     return cards;
 }
 
 export function initializeTab7() {
     console.log('Initializing Tab7...');
-    
+
     // Get DOM elements
     const flashcardBtn = document.getElementById('flashcardBtn');
     const generateFlashcardForm = document.getElementById('generate-flashcard-form');
@@ -197,7 +197,7 @@ export function initializeTab7() {
             const response = await fetch('http://localhost:5000/api/generate-flashcards', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json',
+                    'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({ url: urlInput })
             });
@@ -216,18 +216,18 @@ export function initializeTab7() {
             // Parse flashcards from the response
             currentCards = parseFlashcards(data.flashcards);
             console.log('Current cards after parsing:', currentCards);
-            
+
             if (currentCards.length === 0) {
                 throw new Error('No flashcards were generated');
             }
-            
+
             currentCardIndex = 0;
             isFlipped = false;
-            
+
             // Update UI
             updateFlashcardDisplay();
             flashcardOutput.style.display = 'block';
-            
+
             // Add styles for better flashcard display
             const style = document.createElement('style');
             style.textContent = `
@@ -396,40 +396,40 @@ export function initializeTab7() {
     function updateFlashcardDisplay() {
         console.log('Updating flashcard display. Current index:', currentCardIndex);
         console.log('Current cards:', currentCards);
-        
+
         if (currentCards.length === 0) {
             console.log('No cards to display');
             return;
         }
-        
+
         const card = currentCards[currentCardIndex];
         console.log('Current card:', card);
-        
+
         // Update front content
         flashcardFront.innerHTML = `
             <div class="flashcard-content">
                 <h2>${card.front}</h2>
             </div>
         `;
-        
+
         // Update back content
         flashcardBack.innerHTML = `
             <div class="flashcard-content">
                 ${card.back}
             </div>
         `;
-        
+
         // Update counter
         flashcardCounter.textContent = `Card ${currentCardIndex + 1} of ${currentCards.length}`;
-        
+
         // Reset flip state
         isFlipped = false;
         flashcardInner.style.transform = 'rotateY(0deg)';
-        
+
         // Update button states
         prevFlashcardBtn.disabled = currentCardIndex === 0;
         nextFlashcardBtn.disabled = currentCardIndex === currentCards.length - 1;
-        
+
         // Add visual feedback for disabled state
         prevFlashcardBtn.style.opacity = prevFlashcardBtn.disabled ? '0.5' : '1';
         nextFlashcardBtn.style.opacity = nextFlashcardBtn.disabled ? '0.5' : '1';
@@ -463,7 +463,7 @@ export function initializeTab7() {
             const currentCard = currentCards[currentCardIndex];
             const textToCopy = `${currentCard.front}\n\n${currentCard.back}`;
             await navigator.clipboard.writeText(textToCopy);
-            
+
             // Show feedback
             const originalText = copyFlashcardBtn.innerHTML;
             copyFlashcardBtn.innerHTML = `
@@ -472,7 +472,7 @@ export function initializeTab7() {
                 </svg>
                 Copied!
             `;
-            
+
             // Reset button after 2 seconds
             setTimeout(() => {
                 copyFlashcardBtn.innerHTML = originalText;
@@ -490,7 +490,7 @@ export function initializeTab7() {
             const container = document.createElement('div');
             container.style.padding = '20px';
             container.style.backgroundColor = 'white';
-            
+
             // Add each card to the container
             currentCards.forEach((card, index) => {
                 const cardDiv = document.createElement('div');
@@ -533,7 +533,7 @@ export function initializeTab7() {
             printWindow.document.close();
 
             // Wait for content to load
-            printWindow.onload = function() {
+            printWindow.onload = function () {
                 printWindow.print();
                 printWindow.close();
             };
@@ -683,8 +683,10 @@ export function initializeTab7() {
 
     // Add click handler for the extract URL button
     extractUrlBtn.addEventListener('click', async () => {
-        if (extractUrlBtn.disabled) return;
-        
+        if (extractUrlBtn.disabled) {
+            return;
+        }
+
         disableButtons();
         try {
             const url = await getCurrentTabUrl();
@@ -705,8 +707,10 @@ export function initializeTab7() {
 
     // Add click handler for the generate button
     generateBtn.addEventListener('click', () => {
-        if (generateBtn.disabled) return;
-        
+        if (generateBtn.disabled) {
+            return;
+        }
+
         disableButtons();
         try {
             submitFlashcard.click();
@@ -733,4 +737,4 @@ export function initializeTab7() {
     generateFlashcardForm.style.display = 'none';
     flashcardOutput.style.display = 'none';
     loadingMessage.style.display = 'none';
-} 
+}

@@ -3,7 +3,7 @@ export function renderColorPalette(colors) {
     const paletteContainer = document.getElementById('palette-container');
     const copiedMessage = document.getElementById('copied-message');
     const paletteCard = document.getElementById('palette-card');
-    let isEditMode = false;
+    const isEditMode = false;
 
     paletteContainer.innerHTML = ''; // Clear previous palette
 

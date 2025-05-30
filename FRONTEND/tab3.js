@@ -4,7 +4,7 @@ import { renderFontCards } from './renderFontCards.js';
 
 export function initializeTab3() {
     console.log('Initializing Tab3...');
-    
+
     // Get DOM elements
     const fontBtn = document.getElementById('fontBtn');
     const generateFontForm = document.getElementById('generate-font-form');
@@ -22,7 +22,7 @@ export function initializeTab3() {
     // Function to switch between font tabs
     function switchFontTab(activeButton) {
         console.log('Switching to tab:', activeButton.id);
-        
+
         // Cancel any ongoing analysis
         shouldCancelAnalysis = true;
         if (window.currentFontAnalysisProcess) {
@@ -52,7 +52,7 @@ export function initializeTab3() {
         elementsToReset.forEach(element => {
             element.style.display = 'none';
         });
-        
+
         fontCardsContainer.innerHTML = '';
         loadingMessage.textContent = 'Loading...';
 
@@ -75,19 +75,18 @@ export function initializeTab3() {
         generateFontForm.style.display = 'block';
     });
 
-
     submitFontBtn.addEventListener('click', async () => {
         const fontInput = document.getElementById('fontInput').value;
-        
+
         if (!fontInput) {
             alert('Please enter a design description.');
             return;
         }
-        
+
         loadingMessage.style.display = 'block';
         fontCardsContainer.style.display = 'none';
         fontCardsContainer.innerHTML = '';
-        
+
         try {
             const promptText = `Based on this design description: "${fontInput}", suggest 6 Google Fonts that would be perfect for this project. For each font, provide:
 1. The exact font name
@@ -100,19 +99,19 @@ Open Sans
 https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap
 
 Make sure to use the exact font names and URLs as shown in the example.`;
-            
+
             const result = await fetchAiResponse(promptText);
-            
+
             // Process the response to extract font names and URLs
             const lines = result.split('\n').map(line => line.trim()).filter(line => line);
             const fontLinks = [];
-            
+
             for (let i = 0; i < lines.length; i += 2) {
                 if (i + 1 < lines.length && lines[i + 1].includes('fonts.googleapis.com')) {
                     fontLinks.push(lines[i + 1]);
                 }
             }
-            
+
             if (fontLinks.length > 0) {
                 await renderFontCards(fontLinks, fontCardsContainer);
                 fontCardsContainer.style.display = 'flex';
@@ -142,12 +141,12 @@ Make sure to use the exact font names and URLs as shown in the example.`;
         btn.style.backgroundColor = 'white';
         btn.style.color = 'black';
     });
-    
+
     // Hide all content initially
     generateFontForm.style.display = 'none';
     fontCardsContainer.style.display = 'none';
     loadingMessage.style.display = 'none';
     analysisOutput.style.display = 'none';
-    
+
     console.log('Tab3 initialization completed with no tab selected');
-} 
+}

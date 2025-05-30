@@ -4,12 +4,11 @@ import { renderColorPalette } from './renderColorPalette.js';
 const paletteContainer = document.getElementById('palette-container');
 const paletteCard = document.getElementById('palette-card');
 const screenInfoCard = document.getElementById('screen-info-card');
-const generatePaletteForm = document.getElementById("generate-palette-form");
+const generatePaletteForm = document.getElementById('generate-palette-form');
 const savePaletteBtn = document.getElementById('savePaletteBtn');
 const savedPaletteBtn = document.getElementById('savedPaletteBtn');
 const savedPalettesContainer = document.getElementById('saved-palettes-container');
 const savedPalettesDiv = document.getElementById('savedPalettes');
-
 
 // Display saved palettes when savedPaletteBtn is clicked
 savedPaletteBtn.addEventListener('click', toggleSavedPalettes);
@@ -24,7 +23,7 @@ function toggleSavedPalettes() {
 
 function displaySavedPalettes() {
     if (!savedPalettesDiv || !generatePaletteForm || !paletteCard || !screenInfoCard) {
-        console.error("One or more required elements are missing from the DOM.");
+        console.error('One or more required elements are missing from the DOM.');
         return; // Exit the function early if elements are not available
     }
 
@@ -94,7 +93,7 @@ function displaySavedPalettes() {
 function deletePalette(index) {
     // Retrieve saved palettes from local storage
     const savedPalettes = JSON.parse(localStorage.getItem('savedPalettes')) || [];
-    
+
     if (index >= 0 && index < savedPalettes.length) {  // Check if index is valid
         // Remove the palette at the specified index
         savedPalettes.splice(index, 1);
@@ -113,22 +112,20 @@ function deletePalette(index) {
 // Event listener to save the current palette
 savePaletteBtn.addEventListener('click', savePalette);
 
-
 function savePalette() {
     const colors = Array.from(paletteContainer.children).map(div => div.getAttribute('data-hex'));
     const savedMessage = document.getElementById('saved-message');
 
-
     if (colors.length > 0) {
         // Retrieve saved palettes from local storage, or initialize an empty array
         const savedPalettes = JSON.parse(localStorage.getItem('savedPalettes')) || [];
-        
+
         // Add the new palette
         savedPalettes.push(colors);
-        
+
         // Update local storage with the new list of palettes
         localStorage.setItem('savedPalettes', JSON.stringify(savedPalettes));
-        
+
         savedMessage.style.display = 'block';
         setTimeout(() => {
             savedMessage.style.display = 'none';

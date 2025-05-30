@@ -10,9 +10,9 @@ export function initializeTab2() {
     const paletteContainer = document.getElementById('palette-container');
     const paletteCard = document.getElementById('palette-card');
     const screenInfoCard = document.getElementById('screen-info-card');
-    const submitPalette = document.getElementById("submitPalette");
-    const loadingMessage = document.getElementById("loading-message");
-    const generatePaletteForm = document.getElementById("generate-palette-form");
+    const submitPalette = document.getElementById('submitPalette');
+    const loadingMessage = document.getElementById('loading-message');
+    const generatePaletteForm = document.getElementById('generate-palette-form');
     const savedPalettesContainer = document.getElementById('saved-palettes-container');
     const editPaletteBtn = document.getElementById('editPaletteBtn');
     const morePaletteBtn = document.getElementById('morePaletteBtn');
@@ -30,19 +30,19 @@ export function initializeTab2() {
     });
 
     // Event listener for the AI button
-    aiBtn.addEventListener("click", () => {
+    aiBtn.addEventListener('click', () => {
         // Remove active class from all buttons in capture-container
         document.querySelectorAll('#capture-container button').forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
         aiBtn.classList.add('active');
-        
+
         // Hide other containers
-        paletteCard.style.display = "none";
-        savedPalettesContainer.style.display = "none";
-        screenInfoCard.style.display = "none";
+        paletteCard.style.display = 'none';
+        savedPalettesContainer.style.display = 'none';
+        screenInfoCard.style.display = 'none';
 
         // Show the generate palette form
-        generatePaletteForm.style.display = "block";
+        generatePaletteForm.style.display = 'block';
     });
 
     // Event listener for the saved palette button
@@ -51,7 +51,7 @@ export function initializeTab2() {
         document.querySelectorAll('#capture-container button').forEach(btn => btn.classList.remove('active'));
         // Add active class to clicked button
         document.getElementById('savedPaletteBtn').classList.add('active');
-        
+
         // Show saved palettes container
         savedPalettesContainer.style.display = 'block';
         // Hide other containers
@@ -60,38 +60,38 @@ export function initializeTab2() {
         generatePaletteForm.style.display = 'none';
     });
 
-    submitPalette.addEventListener("click", async () => {
-        const paletteInput = document.getElementById("paletteInput").value;
-    
+    submitPalette.addEventListener('click', async () => {
+        const paletteInput = document.getElementById('paletteInput').value;
+
         // Display loading message and clear previous text
-        loadingMessage.style.display = "block";
-        streamedTextContainer.innerText = ""; // Clear text container
-        paletteContainer.innerHTML = ""; // Clear previous color palette
-        document.getElementById("palette-container").style.display = "none"; // Hide the palette initially
-    
+        loadingMessage.style.display = 'block';
+        streamedTextContainer.innerText = ''; // Clear text container
+        paletteContainer.innerHTML = ''; // Clear previous color palette
+        document.getElementById('palette-container').style.display = 'none'; // Hide the palette initially
+
         try {
             const promptText = `Generate a color palette with hexcode based on the phrase, not more than 100 words: "${paletteInput}".`;
-    
+
             // Fetch the AI response
             const result = await fetchAiResponse(promptText);
-    
+
             // Hide the loading message and show the palette container
-            loadingMessage.style.display = "none";
-            document.getElementById("palette-container").style.display = "block";
-    
-            console.log("AI Response:", result);
-    
+            loadingMessage.style.display = 'none';
+            document.getElementById('palette-container').style.display = 'block';
+
+            console.log('AI Response:', result);
+
             // Extract hex color codes from the result
             const hexColorRegex = /#([0-9A-Fa-f]{6}|[0-9A-Fa-f]{3})\b/g;
             const hexCodes = result.match(hexColorRegex) || [];
-            console.log("Extracted hex codes:", hexCodes);
-    
+            console.log('Extracted hex codes:', hexCodes);
+
             // Render the color palette
             renderColorPalette(hexCodes);
         } catch (error) {
-            console.error("Error generating color palette:", error);
-            loadingMessage.style.display = "none";
-            streamedTextContainer.textContent = "An error occurred. Please try again.";
+            console.error('Error generating color palette:', error);
+            loadingMessage.style.display = 'none';
+            streamedTextContainer.textContent = 'An error occurred. Please try again.';
         }
     });
 
@@ -185,7 +185,6 @@ export function initializeTab2() {
         analyzeColors('runAiBtn2', 'Palette Insight based on Industry, be specific');
     });
 
-
     document.getElementById('runAiBtn4').addEventListener('click', () => {
         document.querySelectorAll('#nestedTab1 .sub-button').forEach(btn => btn.classList.remove('selected'));
         document.getElementById('runAiBtn4').classList.add('selected');
@@ -233,4 +232,4 @@ export function initializeTab2() {
         document.getElementById('runAiBtn11').classList.add('selected');
         analyzeColors('runAiBtn11', 'Offer alternative colors that retain the design aesthetic while improving accessibility for visually impaired users.');
     });
-} 
+}

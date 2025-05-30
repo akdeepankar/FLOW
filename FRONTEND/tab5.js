@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function activateTab(tab, tabButton) {
         // Hide all tabs
         allTabs.forEach(t => t.style.display = 'none');
-        
+
         // Deactivate all tab buttons
         allTabButtons.forEach(button => button.classList.remove('active'));
 
@@ -108,11 +108,11 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             body: JSON.stringify(payload)
         })
-        .then(response => response.json())
-        .then(data => {
+            .then(response => response.json())
+            .then(data => {
             // Handle success
-            if (data.status === 'success') {
-                statusMessage.innerHTML = `
+                if (data.status === 'success') {
+                    statusMessage.innerHTML = `
                     <div style="text-align: center; padding: 10px;">
                         <span style="
                             background-color: #d1fae5;
@@ -125,15 +125,15 @@ document.addEventListener('DOMContentLoaded', function () {
                             Payment link sent successfully to ${email} for ₹${amount}
                         </span>
                     </div>`;
-            } else {
-                statusMessage.innerHTML = `<p style="color: #dc3545; text-align: center;">Failed to send payment link: ${data.error || "Unknown error"}</p>`;
-            }
-        })
-        .catch(error => {
+                } else {
+                    statusMessage.innerHTML = `<p style="color: #dc3545; text-align: center;">Failed to send payment link: ${data.error || 'Unknown error'}</p>`;
+                }
+            })
+            .catch(error => {
             // Handle error
-            console.error('Error:', error);
-            statusMessage.innerHTML = '<p style="color: #dc3545; text-align: center;">There was an error sending the payment link. Please try again.</p>';
-        });
+                console.error('Error:', error);
+                statusMessage.innerHTML = '<p style="color: #dc3545; text-align: center;">There was an error sending the payment link. Please try again.</p>';
+            });
     });
 
     // Automatically fetch and display the payment links
@@ -174,10 +174,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 api_secret: apiSecret
             })
         })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'success' && data.payment_links.length > 0) {
-                paymentLinksContainer.innerHTML = `
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success' && data.payment_links.length > 0) {
+                    paymentLinksContainer.innerHTML = `
                     <table class="payment-table">
                         <thead>
                             <tr>
@@ -191,14 +191,14 @@ document.addEventListener('DOMContentLoaded', function () {
                         </tbody>
                     </table>
                 `;
-            
-                const tableBody = paymentLinksContainer.querySelector('tbody');
-            
-                data.payment_links.forEach(link => {
-                    const statusClass = getStatusClass(link.status);
-            
-                    const row = document.createElement('tr');
-                    row.innerHTML = `
+
+                    const tableBody = paymentLinksContainer.querySelector('tbody');
+
+                    data.payment_links.forEach(link => {
+                        const statusClass = getStatusClass(link.status);
+
+                        const row = document.createElement('tr');
+                        row.innerHTML = `
                         <td>
                             <div>
                                 <strong>${link.customer_name || 'N/A'}</strong><br>
@@ -214,18 +214,17 @@ document.addEventListener('DOMContentLoaded', function () {
                             <a href="${link.short_url}" target="_blank">Open</a>
                         </td>
                     `;
-                    tableBody.appendChild(row);
-                });
-            } else {
-                paymentLinksContainer.innerHTML = '<p>No payment links found.</p>';
-            }
-            
-            
-        })
-        .catch(error => {
-            console.error('Error fetching payment links:', error);
-            paymentLinksContainer.innerHTML = '<p>Error fetching payment links.</p>';
-        });
+                        tableBody.appendChild(row);
+                    });
+                } else {
+                    paymentLinksContainer.innerHTML = '<p>No payment links found.</p>';
+                }
+
+            })
+            .catch(error => {
+                console.error('Error fetching payment links:', error);
+                paymentLinksContainer.innerHTML = '<p>Error fetching payment links.</p>';
+            });
     } else {
         paymentLinksContainer.innerHTML = '<p>Please set your API key and secret in Settings.</p>';
     }
@@ -271,16 +270,16 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to get the correct status class based on the payment status
     function getStatusClass(status) {
         switch (status) {
-            case 'paid':
-                return 'paid';
-            case 'created':
-                return 'created';
-            case 'failed':
-                return 'failed';
-            case 'cancelled':
-                return 'cancelled';
-            default:
-                return '';
+        case 'paid':
+            return 'paid';
+        case 'created':
+            return 'created';
+        case 'failed':
+            return 'failed';
+        case 'cancelled':
+            return 'cancelled';
+        default:
+            return '';
         }
     }
 });

@@ -1,4 +1,4 @@
-import { analyzeImageWithAgno } from "./imageToAgno.js";
+import { analyzeImageWithAgno } from './imageToAgno.js';
 
 // Function to create a font card
 function createFontCard(fontData) {
@@ -134,20 +134,20 @@ function parseAnalysisResult(result) {
 
 // Function to capture the screen and analyze fonts
 export async function captureAndAnalyzeFont() {
-    const loadingMessage = document.getElementById("loading-message4");
-    const outputContainer = document.getElementById("analysisOutput1");
+    const loadingMessage = document.getElementById('loading-message4');
+    const outputContainer = document.getElementById('analysisOutput1');
 
     try {
         // Step 1: Show the loading message
-        loadingMessage.style.display = "block";
-        outputContainer.style.display = "none";
+        loadingMessage.style.display = 'block';
+        outputContainer.style.display = 'none';
 
         // Step 2: Capture the visible tab
-        const screenshotDataUrl = await chrome.tabs.captureVisibleTab(null, { format: "png" });
+        const screenshotDataUrl = await chrome.tabs.captureVisibleTab(null, { format: 'png' });
 
         if (!screenshotDataUrl) {
-            console.error("Failed to capture tab image.");
-            loadingMessage.style.display = "none";
+            console.error('Failed to capture tab image.');
+            loadingMessage.style.display = 'none';
             return;
         }
 
@@ -185,14 +185,14 @@ Important:
         console.log('Analysis result received:', analysisResult); // Debug log
 
         // Step 4: Hide loading message and show result
-        loadingMessage.style.display = "none";
-        outputContainer.style.display = "block";
+        loadingMessage.style.display = 'none';
+        outputContainer.style.display = 'block';
 
         // Step 5: Parse and display results in cards
         if (analysisResult) {
             // Clear previous content
             outputContainer.innerHTML = '';
-            
+
             // Create container for cards
             const cardsContainer = document.createElement('div');
             cardsContainer.style.cssText = `
@@ -220,9 +220,9 @@ Important:
             outputContainer.innerHTML = '<p style="text-align: center; color: #666;">No font information found. Please try again.</p>';
         }
     } catch (error) {
-        console.error("Error analyzing font:", error);
-        loadingMessage.style.display = "none";
-        outputContainer.style.display = "block";
+        console.error('Error analyzing font:', error);
+        loadingMessage.style.display = 'none';
+        outputContainer.style.display = 'block';
         outputContainer.innerHTML = '<p style="text-align: center; color: #dc3545;">An error occurred during font analysis. Please try again.</p>';
     }
 }

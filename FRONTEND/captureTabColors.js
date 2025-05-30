@@ -10,7 +10,7 @@ function colorDifference(r1, g1, b1, r2, g2, b2) {
     const rDiff = r1 - r2;
     const gDiff = g1 - g2;
     const bDiff = b1 - b2;
-    
+
     // Weighted RGB color difference formula
     return Math.sqrt(
         (2 + rMean/256) * rDiff * rDiff +
@@ -23,7 +23,7 @@ function colorDifference(r1, g1, b1, r2, g2, b2) {
 function findRepresentativeColor(colors) {
     let minDistance = Infinity;
     let representativeColor = colors[0];
-    
+
     for (const color of colors) {
         let totalDistance = 0;
         for (const otherColor of colors) {
@@ -65,17 +65,19 @@ export function captureTabColors() {
                 // Sample colors with a grid to reduce processing
                 const sampleStep = 4; // Sample every 4th pixel
                 const colorSamples = [];
-                
+
                 for (let y = 0; y < canvas.height; y += sampleStep) {
                     for (let x = 0; x < canvas.width; x += sampleStep) {
                         const i = (y * canvas.width + x) * 4;
-                    const r = data[i];
-                    const g = data[i + 1];
-                    const b = data[i + 2];
+                        const r = data[i];
+                        const g = data[i + 1];
+                        const b = data[i + 2];
                         const a = data[i + 3];
 
                         // Skip transparent and very light colors
-                        if (a < 128 || (r > 240 && g > 240 && b > 240)) continue;
+                        if (a < 128 || (r > 240 && g > 240 && b > 240)) {
+                            continue;
+                        }
 
                         colorSamples.push([r, g, b]);
                     }
@@ -114,8 +116,8 @@ export function captureTabColors() {
                 renderColorPalette(prominentColors);
 
                 // Hide unnecessary elements and show palette form
-                savedPalettesContainer.style.display = "none";
-                generatePaletteForm.style.display = "none";
+                savedPalettesContainer.style.display = 'none';
+                generatePaletteForm.style.display = 'none';
             };
         });
     });

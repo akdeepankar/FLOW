@@ -1,6 +1,6 @@
 export function convertMarkdownToHtml(markdown) {
     // Convert simple markdown to HTML
-    let html = markdown
+    const html = markdown
         .replace(/^### (.*$)/gim, '<h3>$1</h3>')  // H3
         .replace(/^## (.*$)/gim, '<h2>$1</h2>')   // H2
         .replace(/^# (.*$)/gim, '<h1>$1</h1>')    // H1

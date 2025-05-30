@@ -107,19 +107,19 @@ export async function renderFontCards(fontLinks, container) {
             applyFontBtn.onclick = async () => {
                 applyFontBtn.disabled = true;
                 applyFontBtn.textContent = 'Applying...';
-                
+
                 try {
                     // First inject the font
                     const fontUrl = link;
                     const fontName = fontNameElement.textContent;
-                    
+
                     // Create the CSS to apply the font
                     const css = `
                         * {
                             font-family: '${fontName}', sans-serif !important;
                         }
                     `;
-                    
+
                     // Send the command to apply the font
                     const response = await fetch('http://localhost:5000/api/browser/execute', {
                         method: 'POST',
