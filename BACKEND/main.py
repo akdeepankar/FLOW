@@ -516,9 +516,7 @@ async def handle_browser_task():
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
-    
-@app.route("/api/payments/generate-link", methods=["POST"])
-async def generate_payment_link():
+
     required_fields = [
         "api_key",
         "api_secret",

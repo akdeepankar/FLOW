@@ -51,6 +51,99 @@ FLOW/
 ```
 
 
+```
+## 🎯 Core Components
+
+### 🤖 AI Agents
+
+| Agent Name | Role | Tools | Key Features |
+|------------|------|-------|-------------|
+| Visual Designer | Color theory & composition expert | GPT-4 | Color schemes, visual composition |
+| Typography Expert | Font & layout specialist | GPT-4 | Font selection, typography hierarchy |
+| UX Writer | Microcopy & content guidance | GPT-4 | UX content, user guidance |
+| Image Analysis Agent | Visual content analyzer | AnalyzeToolkit | Image insights, design inspiration |
+| Accessibility Expert | WCAG compliance specialist | GPT-4 | Accessibility standards, contrast ratios |
+| Animation Specialist | Motion design expert | GPT-4 | Transitions, micro-interactions |
+| Brand Strategist | Brand consistency manager | GPT-4 | Brand guidelines, voice consistency |
+| Language Expert | Translation specialist | GPT-4 | Multi-language translation |
+| Browser Automation Agent | Web automation expert | BrowserUseToolkit | Web scraping, form automation |
+| PaymentLinkGenerator | Payment link creator | RazorpayPaymentLink | Payment link generation |
+| PaymentEmailSender | Email notification handler | ResendTools | Payment link distribution |
+| FlashcardGenerator | Educational content creator | WebsiteTools | Flashcard generation |
+
+### 👥 Teams
+
+| Team Name | Mode | Members | Purpose |
+|-----------|------|---------|---------|
+| PaymentProcessingTeam | Coordinate | PaymentLinkGenerator, PaymentEmailSender | End-to-end payment processing |
+| Creative Design Team | Route | All design specialists | Comprehensive design solutions |
+
+### 🔌 API Endpoints
+
+| Endpoint | Method | Purpose | Key Inputs |
+|----------|--------|---------|------------|
+| `/api/ai-response` | POST | Design queries | prompt, image_url, element |
+| `/api/browser/execute` | POST | Browser automation | prompt |
+| `/api/payments/generate-link` | POST | Payment link generation | api_key, amount, customer details |
+| `/api/send-payment-link` | POST | Payment link distribution | Payment details, customer info |
+| `/api/track-payments` | POST | Payment monitoring | api_key, limit, status |
+| `/api/analyze-images` | POST | Image analysis | prompt |
+| `/api/analyze-tab` | POST | Tab analysis | prompt |
+| `/api/translate` | POST | Text translation | element, prompt |
+| `/api/generate-flashcards` | POST | Flashcard creation | url |
+
+### 🛠️ Tools & Dependencies
+
+| Category | Tools | Purpose |
+|----------|-------|---------|
+| Core Framework | Flask, CORS | Web framework, CORS handling |
+| AI Integration | OpenAI, GPT-4 | AI model integration |
+| Database | LanceDB | Vector database |
+| Search | DuckDuckGo | Search functionality |
+| Custom Toolkits | BrowserUseToolkit | Browser automation |
+| | RazorpayPaymentLink | Payment processing |
+| | RazorpayTrackerToolkit | Payment tracking |
+| | AnalyzeToolkit | Content analysis |
+| | WebsiteTools | Web content extraction |
+| | ResendTools | Email functionality |
+
+### ✨ Key Features
+
+| Feature Category | Capabilities |
+|------------------|--------------|
+| AI-Powered Analysis | • Visual content analysis<br>• Text analysis<br>• Design recommendations |
+| Payment Processing | • Link generation<br>• Email notifications<br>• Payment tracking |
+| Content Generation | • Flashcard creation<br>• Translation services<br>• Design recommendations |
+| Browser Automation | • Web scraping<br>• Form filling<br>• Content monitoring |
+
+```
+
+## 🚀 Setup & Installation
+
+### Backend Setup
+1. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Configure environment variables in `.env`
+3. Start the server:
+   ```bash
+   python main.py
+   ```
+
+### Extension Setup
+1. Load the extension in Chrome:
+   - Go to `chrome://extensions/`
+   - Enable Developer mode
+   - Click "Load unpacked"
+   - Select the `FRONTEND` directory
+
+## 📝 Notes
+- Backend server must be running for full functionality
+- All API endpoints require proper authentication
+- Browser automation features require Chrome with debugging enabled
+
+
 ### Running The Extension
 
 ### 1. Backend Setup
