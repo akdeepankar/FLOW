@@ -4,10 +4,10 @@ FLOW is an intelligent Chrome extension powered by Agno and Browser Use that sup
 
 ## Features
 
-### 1. Context Menu Features
+## 1. Context Menu Features
 Right-click anywhere on a webpage to access powerful tools:
 
-## 🔍 Analyze Element  
+### 🔍 Analyze Element  
 Easily inspect and understand any element on a webpage — powered by **Agno**.  
 
 **How to use:**  
@@ -17,7 +17,7 @@ Easily inspect and understand any element on a webpage — powered by **Agno**.
 4. Click on any element — image, text, or paragraph — to get instant, AI-powered insights.
 
 
-## 🌐 Translate Text  
+### 🌐 Translate Text  
 Translate any text element on a webpage directly into your chosen language — seamlessly integrated into the page.
 
 **Supported languages:**  
@@ -40,7 +40,7 @@ Translate any text element on a webpage directly into your chosen language — s
 *No popups. No distractions. Just seamless in-place translation.*
 
 
-## 🤖 Flowy  
+### 🤖 Flowy  
 Meet your intelligent in-browser assistant — powered by **Browser Use**.  
 **Flowy** is one of the most powerful tools for interacting with your current browser tab — no popups, no switching windows, no distractions.
 
@@ -58,63 +58,67 @@ Meet your intelligent in-browser assistant — powered by **Browser Use**.
 
 *A seamless, focused AI experience — built right into your browser.*
 
+## 2. Extension Popup Feature
 
-### 2. Flashcard Generation
-Generate educational flashcards from any webpage with a single click.
+### 🏠 Tab 1: Home  
+A quick visual welcome and entry point to all features.
 
-- **URL Input**: Enter any URL or use the "Current URL" button to generate flashcards from the active tab
-- **Smart Generation**: AI-powered content extraction and organization
-- **Interactive Cards**: 
-  - Click to flip between front and back
-  - Navigate through cards using Previous/Next buttons
-  - Copy card content with one click
-  - Export all cards as PDF
-- **Structured Content**:
-  - Clear questions on the front
-  - Comprehensive answers on the back including:
-    - Definitions
-    - Key Points
-    - Examples
-    - Additional Context
+### 🎨 Tab 2: Color Palette
 
-### 3. Color Palette Generation
-Create and manage color palettes for your design projects.
+- ✨ Generate color palettes from text prompts (“thoughts”)
+- 🖌️ Capture colors from the current web page
+- 💾 Save, edit, and manage favorite palettes
+- 🤖 AI-powered insights:
+  - 🎭 Mood of the palette
+  - 🏭 Industry-specific suggestions
+  - 🌏 Cultural significance
+- 🛠️ Usage recommendations:
+  - 🏷️ Logo integration
+  - 💻 Responsive web design
+  - 🖨️ Print and 🏠 interior design
+- ♿ Accessibility analysis:
+  - ⚖️ Contrast ratio (WCAG)
+  - 👁️‍🗨️ Color blindness simulation
+  - 🟢 Accessible alternatives
 
-- Generate color schemes from text descriptions
-- Capture colors from web pages
-- Save and manage your favorite palettes
-- Get color insights and usage recommendations
+### 🔤 Tab 3: Font & Vector Generator
 
-### 4. Font & Vector Generation
-Generate fonts and vector graphics based on your requirements.
+- ✍️ Generate font suggestions from a text prompt
+- 👀 Preview font cards with live samples
+- 🪄 Apply a selected font to the current page (injects font into DOM)
+- 📋 Copy font CSS for use elsewhere
 
-- Create custom fonts from descriptions
-- Generate vector icons and graphics
-- Download SVG files
-- Copy SVG code directly
+- 🪄 Generate vector icons/graphics from a text prompt
+- 👁️ Preview generated SVGs
+- 📋 Copy SVG code or ⬇️ download SVG files
 
-### 5. Content Generation & Analysis
-AI-powered content creation and analysis tools.
+### 💸 Tab 5: Payment Management
 
-- Generate various types of content:
-  - Blog posts
-  - Articles
-  - Social media posts
-  - Business proposals
-  - And more
-- Analyze content for:
-  - SEO optimization
-  - Readability
-  - Sentiment
-  - Grammar
+- 🔗 Generate payment links (Razorpay integration)
+- 📊 Track payment status in real time
+- 🔐 Manage and save API keys securely
+- 📋 View and manage all payment links
+- 📧 Send payment notifications
 
-### 6. Payment Management
-Integrated payment processing and tracking.
 
-- Generate payment links
-- Track payment status
-- Manage payment settings
-- Send payment notifications
+### 📝 Tab 6: Content Generation & Analysis
+
+- 🛠️ Generate content:
+  - 📰 Blog posts, 🗞️ articles, 📨 newsletters, 📱 social posts
+  - 📧 Business emails, 📄 proposals, 🏷️ product descriptions, 📚 case studies
+- 🧠 Analyze content:
+  - 😊 Sentiment, 🏷️ keywords, 📝 summary, ✏️ grammar
+  - 🔍 SEO optimization, 📖 readability, 📈 engagement, 🏆 competitor analysis
+- 📋 Copy generated or analyzed content
+
+
+### 🃏 Tab 7: Flashcard Generation
+
+- ⚡ Generate flashcards from any URL (or current tab)
+- 🤖 AI-powered extraction and structuring
+- 🃏 Interactive cards:
+  - 🔄 Flip, ⏮️⏭️ navigate, 📋 copy, and 🖨️ export as PDF
+- 📚 Structured answers: definitions, key points, examples, context
 
 ## Installation
 
