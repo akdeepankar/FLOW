@@ -131,9 +131,10 @@ FLOW/
     </tr>
   </thead>
   <tbody>
-    <tr><td>Core Framework</td><td>Flask, CORS</td><td>Web framework, CORS handling</td></tr>
+    <tr><td>Core Framework</td><td>Flask, CORS</td><td>Backend, CORS handling</td></tr>
+    <tr><td>Frontend Framework</td><td>HTML, CSS, JS</td><td>Extension framework</td></tr>
+    <tr><td>Agentic Framework</td><td>Agno, Browser-use</td><td>AI and Automation</td></tr>
     <tr><td>AI Integration</td><td>OpenAI, GPT-4</td><td>AI model integration</td></tr>
-    <tr><td>Database</td><td>LanceDB</td><td>Vector database</td></tr>
     <tr><td>Search</td><td>DuckDuckGo</td><td>Search functionality</td></tr>
     <tr><td>Custom Toolkits</td><td>BrowserUseToolkit</td><td>Browser automation</td></tr>
     <tr><td></td><td>RazorpayPaymentLink</td><td>Payment processing</td></tr>
@@ -144,50 +145,6 @@ FLOW/
   </tbody>
 </table>
 
-### ✨ Key Features
-
-<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
-  <thead>
-    <tr>
-      <th>Feature Category</th>
-      <th>Capabilities</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AI-Powered Analysis</td>
-      <td>
-        • Visual content analysis<br>
-        • Text analysis<br>
-        • Design recommendations
-      </td>
-    </tr>
-    <tr>
-      <td>Payment Processing</td>
-      <td>
-        • Link generation<br>
-        • Email notifications<br>
-        • Payment tracking
-      </td>
-    </tr>
-    <tr>
-      <td>Content Generation</td>
-      <td>
-        • Flashcard creation<br>
-        • Translation services<br>
-        • Design recommendations
-      </td>
-    </tr>
-    <tr>
-      <td>Browser Automation</td>
-      <td>
-        • Web scraping<br>
-        • Form filling<br>
-        • Content monitoring
-      </td>
-    </tr>
-  </tbody>
-</table>
 
 
 ## 🚀 Setup & Installation
