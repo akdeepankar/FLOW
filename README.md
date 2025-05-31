@@ -1,28 +1,63 @@
 # FLOW - Browser Extension
 
-FLOW is a powerful browser extension that enhances your web browsing experience with AI-powered features. This extension provides various tools for content generation, analysis, and learning.
+FLOW is an intelligent Chrome extension powered by Agno and Browser Use that supercharges your browsing experience with cutting-edge AI tools — empowering you to create, analyze, and learn faster than ever.
 
 ## Features
 
 ### 1. Context Menu Features
 Right-click anywhere on a webpage to access powerful tools:
 
-- **🔍 Analyze Element**: Get instant analysis of any element on the page
-- **🌐 Translation**: Translate text to multiple languages:
-  - Spanish 🇪🇸
-  - French 🇫🇷
-  - German 🇩🇪
-  - Japanese 🇯🇵
-  - Chinese 🇨🇳
-  - Russian 🇷🇺
-  - Arabic 🇸🇦
-  - Hindi 🇮🇳
-- **🤖 Flowy**: Access the AI chatbot assistant for:
-  - Page content analysis
-  - Email assistance
-  - Form filling help
-  - Data extraction
-  - Content summarization
+## 🔍 Analyze Element  
+Easily inspect and understand any element on a webpage — powered by **Agno**.  
+
+**How to use:**  
+1. Right-click anywhere in Chrome.  
+2. Go to **Flow → Analyze Element**.  
+3. Your cursor will switch to the **Element Picker**.  
+4. Click on any element — image, text, or paragraph — to get instant, AI-powered insights.
+
+
+## 🌐 Translate Text  
+Translate any text element on a webpage directly into your chosen language — seamlessly integrated into the page.
+
+**Supported languages:**  
+- Spanish 🇪🇸  
+- French 🇫🇷  
+- German 🇩🇪  
+- Japanese 🇯🇵  
+- Chinese 🇨🇳  
+- Russian 🇷🇺  
+- Arabic 🇸🇦  
+- Hindi 🇮🇳
+
+**How to use:**  
+1. Right-click anywhere on a webpage in Chrome.  
+2. Go to **Flow → Translate Text**, then select your target language.  
+3. Your cursor will switch to the **Element Picker**.  
+4. Click on any text element — a sentence, paragraph, or entire content block.  
+5. The selected text will be instantly translated and **replaced in the page DOM**, right where it was.
+
+*No popups. No distractions. Just seamless in-place translation.*
+
+
+## 🤖 Flowy  
+Meet your intelligent in-browser assistant — powered by **Browser Use**.  
+**Flowy** is one of the most powerful tools for interacting with your current browser tab — no popups, no switching windows, no distractions.
+
+**What Flowy can help you with:**  
+- 🔍 Analyzing page content  
+- 📧 Assisting with email writing  
+- 📝 Helping fill out forms  
+- 📊 Extracting data from web pages  
+- 🧠 Summarizing long or complex content  
+
+**How to use:**  
+1. Right-click anywhere in Chrome.  
+2. Select **Flow → Flowy Assistant**.  
+3. Start chatting directly within your current tab context — Flowy understands the page you're on and works right where you need it.
+
+*A seamless, focused AI experience — built right into your browser.*
+
 
 ### 2. Flashcard Generation
 Generate educational flashcards from any webpage with a single click.
