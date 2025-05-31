@@ -3,7 +3,7 @@
 FLOW is an intelligent Chrome extension powered by Agno and Browser Use that supercharges your browsing experience with cutting-edge AI tools — empowering you to create, analyze, and learn faster than ever.
 
 ## Folder Structure
-
+```
 FLOW/
 ├── .git/                      # Git version control directory
 ├── README.md                  # Project documentation and setup instructions
@@ -51,6 +51,7 @@ FLOW/
     ├── open_chrome.py         # Chrome browser control 
     ├── razorpay_toolkit.py    # Payment integration toolkit
     └── requirements.txt       # Python dependencies
+```
 
 
 ## Running The Extension
