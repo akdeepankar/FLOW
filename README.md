@@ -53,6 +53,47 @@ FLOW/
 
 ### Running The Extension
 
+### 1. Backend Setup
+
+#### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
+- Virtual environment (recommended/Optional)
+
+#### Steps to Run Backend
+1. **Create and Activate Virtual Environment**
+   ```bash
+   # Windows
+   python -m venv venv
+   .\venv\Scripts\activate
+
+   # macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+2. **Install Dependencies**
+   ```bash
+   cd BACKEND
+   pip install -r requirements.txt
+   ```
+3. **Environment Variables**
+   Create a `.env` file in the BACKEND directory with:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   RESEND_API_KEY=your_resend_api_key
+   RAZORPAY_KEY_ID=your_razorpay_key_id
+   RAZORPAY_KEY_SECRET=your_razorpay_key_secret
+   ```
+
+4. **Start the Server**
+   ```bash
+   python main.py
+   ```
+   The server will start on `http://localhost:5000`
+
+### 2. Chrome Extension Setup
+
 BACKEND/open_chrome.py - is a crucial utility script in the FLOW extension that enables automated browser control. It automatically launches Google Chrome with remote debugging capabilities on port 9222, creating a separate debugging profile to avoid interfering with your regular browser settings. 
 
 The script is cross-platform compatible, working seamlessly on Windows, macOS, and Linux systems. It intelligently detects Chrome's installation path, manages existing browser instances, and ensures proper setup for automated tasks like screenshot capture, page analysis, and element interaction. This script is essential for the extension's automated features to function properly, providing a reliable foundation for browser automation and testing.
@@ -73,7 +114,6 @@ In the Chrome browser.
 3) Click Load unpacked.
 
 4) Select the FRONTEND directory of the project folder.
-
 
 
 ## Features
