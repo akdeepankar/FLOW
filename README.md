@@ -5,12 +5,9 @@ FLOW is an intelligent Chrome extension powered by Agno and Browser Use that sup
 ## Folder Structure
 ```
 FLOW/
-├── .git/                      # Git version control directory
 ├── README.md                  # Project documentation and setup instructions
 ├── FRONTEND/                  # Frontend code for the Chrome extension
-│   ├── icons/                 # Extension icons in different sizes
-│   ├── images/                # Image assets used in the extension
-│   ├── .eslintrc.json         # ESLint configuration for code linting
+│   ├── images/                # Image assets & icons used in the extension
 │   ├── package.json           # Node.js package configuration and dependencies
 │   ├── package-lock.json      # Locked versions of npm dependencies
 │   ├── eslint.config.js       # Additional ESLint configuration
@@ -22,7 +19,7 @@ FLOW/
 │   ├── background.js          # Background service worker for extension
 │   ├── contentScript.js       # Content script for font injection
 │   ├── elementPicker.js       # Element selection and analysis functionality
-│   ├── aiChatbot.js           # AI chatbot interface and functionality
+│   ├── aiChatbot.js           # AI chatbot interface and functionality with Browser-use
 │   ├── tab2.js                # Tab 2 functionality (Color Analysis)
 │   ├── tab3.js                # Tab 3 functionality (Font & Vector)
 │   ├── tab4.js                # Tab 4 functionality (Color Palette)
@@ -54,7 +51,7 @@ FLOW/
 ```
 
 
-## Running The Extension
+### Running The Extension
 
 BACKEND/open_chrome.py - is a crucial utility script in the FLOW extension that enables automated browser control. It automatically launches Google Chrome with remote debugging capabilities on port 9222, creating a separate debugging profile to avoid interfering with your regular browser settings. 
 
