@@ -50,73 +50,145 @@ FLOW/
     └── requirements.txt       # Python dependencies
 ```
 
-
-```
 ## 🎯 Core Components
 
 ### 🤖 AI Agents
 
-| Agent Name | Role | Tools | Key Features |
-|------------|------|-------|-------------|
-| Visual Designer | Color theory & composition expert | GPT-4 | Color schemes, visual composition |
-| Typography Expert | Font & layout specialist | GPT-4 | Font selection, typography hierarchy |
-| UX Writer | Microcopy & content guidance | GPT-4 | UX content, user guidance |
-| Image Analysis Agent | Visual content analyzer | AnalyzeToolkit | Image insights, design inspiration |
-| Accessibility Expert | WCAG compliance specialist | GPT-4 | Accessibility standards, contrast ratios |
-| Animation Specialist | Motion design expert | GPT-4 | Transitions, micro-interactions |
-| Brand Strategist | Brand consistency manager | GPT-4 | Brand guidelines, voice consistency |
-| Language Expert | Translation specialist | GPT-4 | Multi-language translation |
-| Browser Automation Agent | Web automation expert | BrowserUseToolkit | Web scraping, form automation |
-| PaymentLinkGenerator | Payment link creator | RazorpayPaymentLink | Payment link generation |
-| PaymentEmailSender | Email notification handler | ResendTools | Payment link distribution |
-| FlashcardGenerator | Educational content creator | WebsiteTools | Flashcard generation |
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Agent Name</th>
+      <th>Role</th>
+      <th>Tools</th>
+      <th>Key Features</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Visual Designer</td><td>Color theory &amp; composition expert</td><td>GPT-4</td><td>Color schemes, visual composition</td></tr>
+    <tr><td>Typography Expert</td><td>Font &amp; layout specialist</td><td>GPT-4</td><td>Font selection, typography hierarchy</td></tr>
+    <tr><td>UX Writer</td><td>Microcopy &amp; content guidance</td><td>GPT-4</td><td>UX content, user guidance</td></tr>
+    <tr><td>Image Analysis Agent</td><td>Visual content analyzer</td><td>AnalyzeToolkit</td><td>Image insights, design inspiration</td></tr>
+    <tr><td>Accessibility Expert</td><td>WCAG compliance specialist</td><td>GPT-4</td><td>Accessibility standards, contrast ratios</td></tr>
+    <tr><td>Animation Specialist</td><td>Motion design expert</td><td>GPT-4</td><td>Transitions, micro-interactions</td></tr>
+    <tr><td>Brand Strategist</td><td>Brand consistency manager</td><td>GPT-4</td><td>Brand guidelines, voice consistency</td></tr>
+    <tr><td>Language Expert</td><td>Translation specialist</td><td>GPT-4</td><td>Multi-language translation</td></tr>
+    <tr><td>Browser Automation Agent</td><td>Web automation expert</td><td>BrowserUseToolkit</td><td>Web scraping, form automation</td></tr>
+    <tr><td>PaymentLinkGenerator</td><td>Payment link creator</td><td>RazorpayPaymentLink</td><td>Payment link generation</td></tr>
+    <tr><td>PaymentEmailSender</td><td>Email notification handler</td><td>ResendTools</td><td>Payment link distribution</td></tr>
+    <tr><td>FlashcardGenerator</td><td>Educational content creator</td><td>WebsiteTools</td><td>Flashcard generation</td></tr>
+  </tbody>
+</table>
 
 ### 👥 Teams
 
-| Team Name | Mode | Members | Purpose |
-|-----------|------|---------|---------|
-| PaymentProcessingTeam | Coordinate | PaymentLinkGenerator, PaymentEmailSender | End-to-end payment processing |
-| Creative Design Team | Route | All design specialists | Comprehensive design solutions |
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Team Name</th>
+      <th>Mode</th>
+      <th>Members</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>PaymentProcessingTeam</td><td>Coordinate</td><td>PaymentLinkGenerator, PaymentEmailSender</td><td>End-to-end payment processing</td></tr>
+    <tr><td>Creative Design Team</td><td>Route</td><td>All design specialists</td><td>Comprehensive design solutions</td></tr>
+  </tbody>
+</table>
 
 ### 🔌 API Endpoints
 
-| Endpoint | Method | Purpose | Key Inputs |
-|----------|--------|---------|------------|
-| `/api/ai-response` | POST | Design queries | prompt, image_url, element |
-| `/api/browser/execute` | POST | Browser automation | prompt |
-| `/api/payments/generate-link` | POST | Payment link generation | api_key, amount, customer details |
-| `/api/send-payment-link` | POST | Payment link distribution | Payment details, customer info |
-| `/api/track-payments` | POST | Payment monitoring | api_key, limit, status |
-| `/api/analyze-images` | POST | Image analysis | prompt |
-| `/api/analyze-tab` | POST | Tab analysis | prompt |
-| `/api/translate` | POST | Text translation | element, prompt |
-| `/api/generate-flashcards` | POST | Flashcard creation | url |
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Endpoint</th>
+      <th>Method</th>
+      <th>Purpose</th>
+      <th>Key Inputs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>/api/ai-response</td><td>POST</td><td>Design queries</td><td>prompt, image_url, element</td></tr>
+    <tr><td>/api/browser/execute</td><td>POST</td><td>Browser automation</td><td>prompt</td></tr>
+    <tr><td>/api/payments/generate-link</td><td>POST</td><td>Payment link generation</td><td>api_key, amount, customer details</td></tr>
+    <tr><td>/api/send-payment-link</td><td>POST</td><td>Payment link distribution</td><td>Payment details, customer info</td></tr>
+    <tr><td>/api/track-payments</td><td>POST</td><td>Payment monitoring</td><td>api_key, limit, status</td></tr>
+    <tr><td>/api/analyze-images</td><td>POST</td><td>Image analysis</td><td>prompt</td></tr>
+    <tr><td>/api/analyze-tab</td><td>POST</td><td>Tab analysis</td><td>prompt</td></tr>
+    <tr><td>/api/translate</td><td>POST</td><td>Text translation</td><td>element, prompt</td></tr>
+    <tr><td>/api/generate-flashcards</td><td>POST</td><td>Flashcard creation</td><td>url</td></tr>
+  </tbody>
+</table>
 
 ### 🛠️ Tools & Dependencies
 
-| Category | Tools | Purpose |
-|----------|-------|---------|
-| Core Framework | Flask, CORS | Web framework, CORS handling |
-| AI Integration | OpenAI, GPT-4 | AI model integration |
-| Database | LanceDB | Vector database |
-| Search | DuckDuckGo | Search functionality |
-| Custom Toolkits | BrowserUseToolkit | Browser automation |
-| | RazorpayPaymentLink | Payment processing |
-| | RazorpayTrackerToolkit | Payment tracking |
-| | AnalyzeToolkit | Content analysis |
-| | WebsiteTools | Web content extraction |
-| | ResendTools | Email functionality |
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Category</th>
+      <th>Tools</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Core Framework</td><td>Flask, CORS</td><td>Web framework, CORS handling</td></tr>
+    <tr><td>AI Integration</td><td>OpenAI, GPT-4</td><td>AI model integration</td></tr>
+    <tr><td>Database</td><td>LanceDB</td><td>Vector database</td></tr>
+    <tr><td>Search</td><td>DuckDuckGo</td><td>Search functionality</td></tr>
+    <tr><td>Custom Toolkits</td><td>BrowserUseToolkit</td><td>Browser automation</td></tr>
+    <tr><td></td><td>RazorpayPaymentLink</td><td>Payment processing</td></tr>
+    <tr><td></td><td>RazorpayTrackerToolkit</td><td>Payment tracking</td></tr>
+    <tr><td></td><td>AnalyzeToolkit</td><td>Content analysis</td></tr>
+    <tr><td></td><td>WebsiteTools</td><td>Web content extraction</td></tr>
+    <tr><td></td><td>ResendTools</td><td>Email functionality</td></tr>
+  </tbody>
+</table>
 
 ### ✨ Key Features
 
-| Feature Category | Capabilities |
-|------------------|--------------|
-| AI-Powered Analysis | • Visual content analysis<br>• Text analysis<br>• Design recommendations |
-| Payment Processing | • Link generation<br>• Email notifications<br>• Payment tracking |
-| Content Generation | • Flashcard creation<br>• Translation services<br>• Design recommendations |
-| Browser Automation | • Web scraping<br>• Form filling<br>• Content monitoring |
+<table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse;">
+  <thead>
+    <tr>
+      <th>Feature Category</th>
+      <th>Capabilities</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>AI-Powered Analysis</td>
+      <td>
+        • Visual content analysis<br>
+        • Text analysis<br>
+        • Design recommendations
+      </td>
+    </tr>
+    <tr>
+      <td>Payment Processing</td>
+      <td>
+        • Link generation<br>
+        • Email notifications<br>
+        • Payment tracking
+      </td>
+    </tr>
+    <tr>
+      <td>Content Generation</td>
+      <td>
+        • Flashcard creation<br>
+        • Translation services<br>
+        • Design recommendations
+      </td>
+    </tr>
+    <tr>
+      <td>Browser Automation</td>
+      <td>
+        • Web scraping<br>
+        • Form filling<br>
+        • Content monitoring
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-```
 
 ## 🚀 Setup & Installation
 
