@@ -5,52 +5,53 @@ FLOW is an intelligent Chrome extension powered by Agno and Browser Use that sup
 ## Folder Structure
 
 FLOW/
-├── .git/                           # Git version control directory
-├── README.md                       # Project documentation and setup instructions
-├── FRONTEND/                       # Frontend code for the Chrome extension
-│   ├── icons/                      # Extension icons in different sizes
-│   ├── images/                     # Image assets used in the extension
-│   ├── .eslintrc.json             # ESLint configuration for code linting
-│   ├── package.json               # Node.js package configuration and dependencies
-│   ├── package-lock.json          # Locked versions of npm dependencies
-│   ├── eslint.config.js           # Additional ESLint configuration
-│   ├── manifest.json              # Chrome extension manifest file
-│   ├── LICENSE                    # Project license file
-│   ├── popup.html                 # Main extension popup interface
-│   ├── popup.css                  # Styles for the popup interface
-│   ├── popup.js                   # Core popup functionality
-│   ├── background.js              # Background service worker for extension
-│   ├── contentScript.js           # Content script for font injection
-│   ├── elementPicker.js           # Element selection and analysis functionality
-│   ├── aiChatbot.js               # AI chatbot interface and functionality
-│   ├── tab2.js                    # Tab 2 functionality (Color Analysis)
-│   ├── tab3.js                    # Tab 3 functionality (Font & Vector)
-│   ├── tab4.js                    # Tab 4 functionality (Color Palette)
-│   ├── tab5.js                    # Tab 5 functionality (Payment Links)
-│   ├── tab5.css                   # Styles for Tab 5
-│   ├── tab6.js                    # Tab 6 functionality (Color Analysis)
-│   ├── tab7.js                    # Tab 7 functionality (Flashcard Generation)
-│   ├── analyzeColors.js           # Color analysis functionality
-│   ├── analyzeCurrentTab.js       # Current tab analysis functionality
-│   ├── captureAndAnalyseFont.js   # Font capture and analysis
-│   ├── captureTabColors.js        # Color capture from current tab
-│   ├── fetchAiResponse.js         # AI response fetching functionality
-│   ├── fetchColorNames.js         # Color name fetching functionality
-│   ├── generateVector.js          # Vector generation functionality
-│   ├── imageToAgno.js             # Image to Agno conversion
-│   ├── MarkdownToHTML.js          # Markdown to HTML conversion
-│   ├── renderColorPalette.js      # Color palette rendering
-│   ├── renderFontCards.js         # Font card rendering
-│   ├── savedPalette.js            # Saved color palette functionality
-│   └── updateColorPalette.js      # Color palette update functionality
-└── BACKEND/                       # Backend server code
-    ├── __pycache__/              # Python bytecode cache
-    ├── main.py                   # Main backend server file
-    ├── analyze_toolkit.py        # Analysis toolkit functionality
-    ├── browser_toolkit.py        # Browser-Use interaction toolkit
-    ├── open_chrome.py            # Chrome browser control 
-    ├── razorpay_toolkit.py       # Payment integration toolkit
-    └── requirements.txt          # Python dependencies
+├── .git/                      # Git version control directory
+├── README.md                  # Project documentation and setup instructions
+├── FRONTEND/                  # Frontend code for the Chrome extension
+│   ├── icons/                 # Extension icons in different sizes
+│   ├── images/                # Image assets used in the extension
+│   ├── .eslintrc.json         # ESLint configuration for code linting
+│   ├── package.json           # Node.js package configuration and dependencies
+│   ├── package-lock.json      # Locked versions of npm dependencies
+│   ├── eslint.config.js       # Additional ESLint configuration
+│   ├── manifest.json          # Chrome extension manifest file
+│   ├── LICENSE                # Project license file
+│   ├── popup.html             # Main extension popup interface
+│   ├── popup.css              # Styles for the popup interface
+│   ├── popup.js               # Core popup functionality
+│   ├── background.js          # Background service worker for extension
+│   ├── contentScript.js       # Content script for font injection
+│   ├── elementPicker.js       # Element selection and analysis functionality
+│   ├── aiChatbot.js           # AI chatbot interface and functionality
+│   ├── tab2.js                # Tab 2 functionality (Color Analysis)
+│   ├── tab3.js                # Tab 3 functionality (Font & Vector)
+│   ├── tab4.js                # Tab 4 functionality (Color Palette)
+│   ├── tab5.js                # Tab 5 functionality (Payment Links)
+│   ├── tab5.css               # Styles for Tab 5
+│   ├── tab6.js                # Tab 6 functionality (Color Analysis)
+│   ├── tab7.js                # Tab 7 functionality (Flashcard Generation)
+│   ├── analyzeColors.js       # Color analysis functionality
+│   ├── analyzeCurrentTab.js   # Current tab analysis functionality
+│   ├── captureAndAnalyseFont.js # Font capture and analysis
+│   ├── captureTabColors.js    # Color capture from current tab
+│   ├── fetchAiResponse.js     # AI response fetching functionality
+│   ├── fetchColorNames.js     # Color name fetching functionality
+│   ├── generateVector.js      # Vector generation functionality
+│   ├── imageToAgno.js         # Image to Agno conversion
+│   ├── MarkdownToHTML.js      # Markdown to HTML conversion
+│   ├── renderColorPalette.js  # Color palette rendering
+│   ├── renderFontCards.js     # Font card rendering
+│   ├── savedPalette.js        # Saved color palette functionality
+│   └── updateColorPalette.js  # Color palette update functionality
+└── BACKEND/                   # Backend server code
+    ├── __pycache__/           # Python bytecode cache
+    ├── main.py                # Main backend server file
+    ├── analyze_toolkit.py     # Analysis toolkit functionality
+    ├── browser_toolkit.py     # Browser-Use interaction toolkit
+    ├── open_chrome.py         # Chrome browser control 
+    ├── razorpay_toolkit.py    # Payment integration toolkit
+    └── requirements.txt       # Python dependencies
+
 
 ## Running The Extension
 
