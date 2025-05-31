@@ -82,8 +82,6 @@ FLOW/
    ```
    OPENAI_API_KEY=your_openai_api_key
    RESEND_API_KEY=your_resend_api_key
-   RAZORPAY_KEY_ID=your_razorpay_key_id
-   RAZORPAY_KEY_SECRET=your_razorpay_key_secret
    ```
 
 4. **Start the Server**
