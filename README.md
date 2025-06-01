@@ -250,8 +250,7 @@ Easily inspect and understand any element on a webpage — powered by **Agno**.
 3. Your cursor will switch to the **Element Picker**.  
 4. Click on any element — image, text, or paragraph — to get instant, AI-powered insights.
 
-[![Analyse Element - Demo](https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
-
+DEMO -
 
 
 ### 🌐 Translate Text  
@@ -276,6 +275,8 @@ Translate any text element on a webpage directly into your chosen language — s
 
 *No popups. No distractions. Just seamless in-place translation.*
 
+DEMO -
+
 
 ### 🤖 Flowy  
 Meet your intelligent in-browser assistant — powered by **Browser Use**.  
@@ -294,6 +295,10 @@ Meet your intelligent in-browser assistant — powered by **Browser Use**.
 3. Start chatting directly within your current tab context — Flowy understands the page you're on and works right where you need it.
 
 *A seamless, focused AI experience — built right into your browser.*
+
+DEMO -
+
+
 
 ## 2. Extension Popup Feature
 
@@ -317,6 +322,10 @@ A quick visual welcome and entry point to all features.
   - ⚖️ Contrast ratio (WCAG)
   - 👁️‍🗨️ Color blindness simulation
   - 🟢 Accessible alternatives
+
+DEMO -
+
+
 
 ### 🔤 Tab 3: Font & Vector Generator
 
