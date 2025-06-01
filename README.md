@@ -343,8 +343,6 @@ https://github.com/user-attachments/assets/763c9d1d-bd1c-450c-990a-8f0ffc1622f4
 
 
 
-
-
 ### 🔤 Tab 3: Font & Vector Generator
 
 - ✍️ Generate font suggestions from a text prompt
@@ -356,7 +354,13 @@ https://github.com/user-attachments/assets/763c9d1d-bd1c-450c-990a-8f0ffc1622f4
 - 👁️ Preview generated SVGs
 - 📋 Copy SVG code or ⬇️ download SVG files
 
-### 💸 Tab 5: Payment Management
+  DEMO -
+
+https://github.com/user-attachments/assets/4e86ce1c-d4cb-48ea-b2af-9b56f90c7491
+
+
+
+### 💸 Tab 4: Payment Management
 
 - 🔗 Generate payment links (Razorpay integration)
 - 📊 Track payment status in real time
@@ -364,8 +368,12 @@ https://github.com/user-attachments/assets/763c9d1d-bd1c-450c-990a-8f0ffc1622f4
 - 📋 View and manage all payment links
 - 📧 Send payment notifications
 
+DEMO -
 
-### 📝 Tab 6: Content Generation & Analysis
+
+
+
+### 📝 Tab 5: Content Generation & Analysis
 
 - 🛠️ Generate content:
   - 📰 Blog posts, 🗞️ articles, 📨 newsletters, 📱 social posts
@@ -376,7 +384,7 @@ https://github.com/user-attachments/assets/763c9d1d-bd1c-450c-990a-8f0ffc1622f4
 - 📋 Copy generated or analyzed content
 
 
-### 🃏 Tab 7: Flashcard Generation
+### 🃏 Tab 6: Flashcard Generation
 
 - ⚡ Generate flashcards from any URL (or current tab)
 - 🤖 AI-powered extraction and structuring
