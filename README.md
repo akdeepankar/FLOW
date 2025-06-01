@@ -252,6 +252,10 @@ Easily inspect and understand any element on a webpage — powered by **Agno**.
 
 DEMO -
 
+https://github.com/user-attachments/assets/29521d26-9efc-4d00-adbd-8a22bf6b704f
+
+
+
 
 ### 🌐 Translate Text  
 Translate any text element on a webpage directly into your chosen language — seamlessly integrated into the page.
@@ -277,6 +281,10 @@ Translate any text element on a webpage directly into your chosen language — s
 
 DEMO -
 
+https://github.com/user-attachments/assets/66d2b000-e341-4523-811c-652f43da9a30
+
+
+
 
 ### 🤖 Flowy  
 Meet your intelligent in-browser assistant — powered by **Browser Use**.  
@@ -297,6 +305,11 @@ Meet your intelligent in-browser assistant — powered by **Browser Use**.
 *A seamless, focused AI experience — built right into your browser.*
 
 DEMO -
+
+https://github.com/user-attachments/assets/9dc60a38-ca05-476d-8cee-d6bf6abbbea2
+
+
+
 
 
 
