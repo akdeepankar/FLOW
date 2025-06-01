@@ -150,95 +150,6 @@ FLOW/
 
 
 
-## 🚀 Setup & Installation
-
-### Backend Setup
-1. Install Python dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-2. Configure environment variables in `.env`
-3. Start the server:
-   ```bash
-   python main.py
-   ```
-
-### Extension Setup
-1. Load the extension in Chrome:
-   - Go to `chrome://extensions/`
-   - Enable Developer mode
-   - Click "Load unpacked"
-   - Select the `FRONTEND` directory
-
-## 📝 Notes
-- Backend server must be running for full functionality
-- All API endpoints require proper authentication
-- Browser automation features require Chrome with debugging enabled
-
-
-### Running The Extension
-
-### 1. Backend Setup
-
-#### Prerequisites
-- Python 3.8 or higher
-- pip (Python package manager)
-- Virtual environment (recommended/Optional)
-
-#### Steps to Run Backend
-1. **Create and Activate Virtual Environment**
-   ```bash
-   # Windows
-   python -m venv venv
-   .\venv\Scripts\activate
-
-   # macOS/Linux
-   python3 -m venv venv
-   source venv/bin/activate
-   ```
-
-2. **Install Dependencies**
-   ```bash
-   cd BACKEND
-   pip install -r requirements.txt
-   ```
-3. **Environment Variables**
-   Create a `.env` file in the BACKEND directory with:
-   ```
-   OPENAI_API_KEY=your_openai_api_key
-   RESEND_API_KEY=your_resend_api_key
-   ```
-
-4. **Start the Server**
-   ```bash
-   python main.py
-   ```
-   The server will start on `http://localhost:5000`
-
-### 2. Chrome Extension Setup
-
-BACKEND/open_chrome.py - is a crucial utility script in the FLOW extension that enables automated browser control. It automatically launches Google Chrome with remote debugging capabilities on port 9222, creating a separate debugging profile to avoid interfering with your regular browser settings. 
-
-The script is cross-platform compatible, working seamlessly on Windows, macOS, and Linux systems. It intelligently detects Chrome's installation path, manages existing browser instances, and ensures proper setup for automated tasks like screenshot capture, page analysis, and element interaction. This script is essential for the extension's automated features to function properly, providing a reliable foundation for browser automation and testing.
-
-Before Starting the Chrome Extension, Run 
-py -m open_chrome
-OR
-python -m open_chrome
-
-Next, set up the extension:
-
-In the Chrome browser.
-
-1) Navigate to chrome://extensions/.
-
-2) Enable Developer mode (toggle in the top-right corner).
-
-3) Click Load unpacked.
-
-4) Select the FRONTEND directory of the project folder.
-
-
 ## Features
 
 ## 1. Context Menu Features
@@ -418,60 +329,94 @@ DEMO -
 https://github.com/user-attachments/assets/f0dead21-0aa0-474e-a0ee-169ce10d2f80
 
 
+## 🚀 Setup & Installation
 
-## Installation
+### Backend Setup
+1. Install Python dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+2. Configure environment variables in `.env`
+3. Start the server:
+   ```bash
+   python main.py
+   ```
 
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Build the extension:
-   ```bash
-   npm run build
-   ```
-4. Load the extension in your browser:
-   - Open Chrome
+### Extension Setup
+1. Load the extension in Chrome:
    - Go to `chrome://extensions/`
-   - Enable "Developer mode"
+   - Enable Developer mode
    - Click "Load unpacked"
-   - Select the `dist` folder
+   - Select the `FRONTEND` directory
 
-## Usage
+## 📝 Notes
+- Backend server must be running for full functionality
+- All API endpoints require proper authentication
+- Browser automation features require Chrome with debugging enabled
 
-1. Click the FLOW extension icon in your browser toolbar
-2. Select the desired feature from the tab menu
-3. Follow the on-screen instructions for each feature
 
-### Flashcard Generation
-1. Click the "Generate Flashcards" button
-2. Enter a URL or use the "Current URL" button
-3. Click "Generate" to create flashcards
-4. Navigate through cards using the Previous/Next buttons
-5. Click a card to flip between front and back
-6. Use the "Copy" button to copy card content
-7. Click "Export All Cards as PDF" to save all cards
+### Running The Extension
 
-## Development
+### 1. Backend Setup
 
-### Frontend Structure
-- `popup.html`: Main extension interface
-- `popup.js`: Core extension functionality
-- `tab7.js`: Flashcard generation feature
-- Other tab-specific JavaScript files for different features
+#### Prerequisites
+- Python 3.8 or higher
+- pip (Python package manager)
+- Virtual environment (recommended/Optional)
 
-### Backend Requirements
-- Node.js server running on `localhost:5000`
-- Required environment variables:
-  - API keys for various services
-  - Database configuration
+#### Steps to Run Backend
+1. **Create and Activate Virtual Environment**
+   ```bash
+   # Windows
+   python -m venv venv
+   .\venv\Scripts\activate
 
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+   # macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
 
-## License
-This project is licensed under the MIT License - see the LICENSE file for details. 
+2. **Install Dependencies**
+   ```bash
+   cd BACKEND
+   pip install -r requirements.txt
+   ```
+3. **Environment Variables**
+   Create a `.env` file in the BACKEND directory with:
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   RESEND_API_KEY=your_resend_api_key
+   ```
+
+4. **Start the Server**
+   ```bash
+   python main.py
+   ```
+   The server will start on `http://localhost:5000`
+
+### 2. Chrome Extension Setup
+
+BACKEND/open_chrome.py - is a crucial utility script in the FLOW extension that enables automated browser control. It automatically launches Google Chrome with remote debugging capabilities on port 9222, creating a separate debugging profile to avoid interfering with your regular browser settings. 
+
+The script is cross-platform compatible, working seamlessly on Windows, macOS, and Linux systems. It intelligently detects Chrome's installation path, manages existing browser instances, and ensures proper setup for automated tasks like screenshot capture, page analysis, and element interaction. This script is essential for the extension's automated features to function properly, providing a reliable foundation for browser automation and testing.
+
+Before Starting the Chrome Extension, Run 
+py -m open_chrome
+OR
+python -m open_chrome
+
+Next, set up the extension:
+
+In the Chrome browser.
+
+1) Navigate to chrome://extensions/.
+
+2) Enable Developer mode (toggle in the top-right corner).
+
+3) Click Load unpacked.
+
+4) Select the FRONTEND directory of the project folder.
+
+5) The Extension Starts !! Yay!
+
+
