@@ -37,8 +37,16 @@ async function handleAiRequest(prompt) {
 
         const result = await fetchAiResponse(prompt);
 
-        // Update the response text and show the result card
-        aiResponseText.textContent = result;
+        // Format the response with proper markdown
+        const formattedResult = result
+            .replace(/### (.*?)(?:\n|$)/g, '<h3>$1</h3>')  // Headers
+            .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold
+            .replace(/\*(.*?)\*/g, '<em>$1</em>')  // Italic
+            .replace(/\n- (.*?)(?:\n|$)/g, '<li>$1</li>')  // List items
+            .replace(/\n/g, '<br>');  // Line breaks
+
+        // Update the response text with formatted HTML
+        aiResponseText.innerHTML = formattedResult;
         resultCard.style.display = 'block';
     } catch (error) {
         console.error('Error running AI session:', error);

@@ -425,7 +425,7 @@ function createChatWindow() {
         typingDiv.style.borderRadius = '12px';
         typingDiv.style.fontSize = '14px';
         typingDiv.style.color = '#666';
-        typingDiv.textContent = 'AI is typing...';
+        typingDiv.textContent = 'Let Flowy Cook...';
         messagesContainer.appendChild(typingDiv);
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
@@ -474,7 +474,7 @@ function createChatWindow() {
 async function summarizePage() {
     const messagesContainer = chatWindow.querySelector('div[style*="flex: 1"]');
 
-    // Show typing indicator
+    // Show only one loading indicator
     const typingDiv = document.createElement('div');
     typingDiv.style.alignSelf = 'flex-start';
     typingDiv.style.padding = '10px 14px';
@@ -482,18 +482,16 @@ async function summarizePage() {
     typingDiv.style.borderRadius = '12px';
     typingDiv.style.fontSize = '14px';
     typingDiv.style.color = '#666';
-    typingDiv.textContent = 'AI is analyzing the page...';
+    typingDiv.textContent = 'AI is analyzing the page...';  // Single loading message
     messagesContainer.appendChild(typingDiv);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
 
     try {
-    // Use the analyze-tab endpoint for summarization
         const response = await fetch('http://localhost:5000/api/analyze-tab', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
-                // Send a dynamic prompt to the analyze-tab endpoint
-                prompt: 'summarize the current page in 200 words'
+                prompt: 'summarize the current page in 100 words'  // Updated to 100 words
             })
         });
 
@@ -502,20 +500,16 @@ async function summarizePage() {
         // Remove typing indicator
         typingDiv.remove();
 
-        if (data.error) {
-            addMessage('assistant', 'Sorry, I encountered an error: ' + data.error);
-        } else if (data.status === 'success') {
-            // Handle the success response from analyze-tab endpoint
+        // Handle the response in a single block
+        if (data.status === 'success') {
             addMessage('assistant', data.analysis || data.message || 'Summarization successful, but no details provided.');
-        } else if (data.status === 'error') {
-            addMessage('assistant', 'Sorry, I encountered an error: ' + (data.message || 'An unknown error occurred on the backend.'));
         } else {
-            addMessage('assistant', 'Received an unexpected response format from the backend.');
+            addMessage('assistant', data.message || data.error || 'An error occurred during summarization.');
         }
     } catch (error) {
+        // Remove typing indicator
         typingDiv.remove();
-        addMessage('assistant', 'Sorry, I encountered an error while summarizing the page. Please try again.');
-        console.error('Error:', error);
+        addMessage('assistant', 'Sorry, I encountered an error while analyzing the page.');
     }
 }
 

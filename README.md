@@ -250,6 +250,9 @@ Easily inspect and understand any element on a webpage — powered by **Agno**.
 3. Your cursor will switch to the **Element Picker**.  
 4. Click on any element — image, text, or paragraph — to get instant, AI-powered insights.
 
+[![Analyse Element - Demo](https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
+
+
 
 ### 🌐 Translate Text  
 Translate any text element on a webpage directly into your chosen language — seamlessly integrated into the page.
