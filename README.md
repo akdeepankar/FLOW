@@ -323,6 +323,8 @@ A quick visual welcome and entry point to all features.
 
 ### 🎨 Tab 2: Color Palette
 
+Whether you're designing a personal project, redecorating your space, or just love playing with color, this tool helps you create beautiful, meaningful palettes in seconds. Generate color schemes from your ideas, capture colors from any site, and explore AI insights like mood, cultural meaning, or design suitability. Plus, you’ll get practical tips for logos, websites, print, and even interior design—along with built-in accessibility checks to make sure your colors work for everyone.
+
 - ✨ Generate color palettes from text prompts (“thoughts”)
 - 🖌️ Capture colors from the current web page
 - 💾 Save, edit, and manage favorite palettes
@@ -393,6 +395,12 @@ Whether you're a content writer, marketer, or solo business owner, this tool sav
   - 😊 Sentiment, 🏷️ keywords, 📝 summary, ✏️ grammar
   - 🔍 SEO optimization, 📖 readability, 📈 engagement, 🏆 competitor analysis
 - 📋 Copy generated or analyzed content
+
+DEMO -
+
+https://github.com/user-attachments/assets/88652dcf-ffb8-4f7a-b360-3bd0879a2c7e
+
+
 
 
 ### 🃏 Tab 6: Flashcard Generation
