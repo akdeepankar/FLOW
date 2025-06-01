@@ -345,6 +345,8 @@ https://github.com/user-attachments/assets/763c9d1d-bd1c-450c-990a-8f0ffc1622f4
 
 ### 🔤 Tab 3: Font & Vector Generator
 
+This tool empowers freelance designers, developers, and content creators to work faster and smarter. Whether you're building a client website or designing a brand identity, you can instantly generate font ideas and vector graphics from simple prompts—no need to search endless libraries. With live previews, one-click CSS or SVG copying, and direct page injection, it streamlines your creative workflow and helps you deliver polished results in record time.
+
 - ✍️ Generate font suggestions from a text prompt
 - 👀 Preview font cards with live samples
 - 🪄 Apply a selected font to the current page (injects font into DOM)
@@ -362,18 +364,24 @@ https://github.com/user-attachments/assets/4e86ce1c-d4cb-48ea-b2af-9b56f90c7491
 
 ### 💸 Tab 4: Payment Management
 
-- 🔗 Generate payment links (Razorpay integration)
-- 📊 Track payment status in real time
+This feature simplifies the entire payment process—freelancers can generate and send payment links directly to clients, track payment updates, and manage everything securely in one place. No more chasing payments. With easy API key management, freelancers can focus more on delivering work and less on administrative hassles powered by Razorpay Payments.
+
+- 🔗 Generate payment links (Razorpay integration) and Send through Resend Toolkit
+- 📊 Track payment status
 - 🔐 Manage and save API keys securely
 - 📋 View and manage all payment links
-- 📧 Send payment notifications
+- 📧 Send payment Emails
 
 DEMO -
+
+https://github.com/user-attachments/assets/4f6d4856-a23a-4037-8607-41cb4c00914e
 
 
 
 
 ### 📝 Tab 5: Content Generation & Analysis
+
+Whether you're a content writer, marketer, or solo business owner, this tool saves hours of work. Instantly create high-quality content for blogs, social media, proposals, or client emails—and refine it with AI-powered analysis. From SEO optimization to sentiment and engagement metrics, freelancers can ensure their content not only sounds great but performs well too. It’s your personal writing assistant, editor, and strategist in one.
 
 - 🛠️ Generate content:
   - 📰 Blog posts, 🗞️ articles, 📨 newsletters, 📱 social posts
@@ -386,11 +394,19 @@ DEMO -
 
 ### 🃏 Tab 6: Flashcard Generation
 
+Whether you're a student, lifelong learner, or just curious, this tool makes it super easy to turn any article or webpage into study-friendly flashcards. With AI doing the heavy lifting, you get neatly structured cards with definitions, key points, and examples—ready to flip through, copy, or print. It's perfect for quick learning, test prep, or reviewing new topics on the fly.
+
 - ⚡ Generate flashcards from any URL (or current tab)
 - 🤖 AI-powered extraction and structuring
 - 🃏 Interactive cards:
   - 🔄 Flip, ⏮️⏭️ navigate, 📋 copy, and 🖨️ export as PDF
 - 📚 Structured answers: definitions, key points, examples, context
+
+DEMO -
+
+https://github.com/user-attachments/assets/f0dead21-0aa0-474e-a0ee-169ce10d2f80
+
+
 
 ## Installation
 
