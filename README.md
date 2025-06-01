@@ -2,6 +2,9 @@
 
 FLOW is an intelligent Chrome extension powered by Agno and Browser Use that supercharges your browsing experience with cutting-edge AI tools — empowering you to create, analyze, and learn faster than ever.
 
+🧠 How it fits into your daily routine:
+Whether you're reading articles, researching a topic, managing payments, or creating content, FLOW works quietly in the background to enhance every step. It’s like having a smart assistant right in your browser—helping you summarize long pages, generate ideas on the fly, create visual assets, and even manage communications or payments—all without switching tabs. From work to personal learning, FLOW makes your everyday browsing more productive, insightful, and effortless.
+
 ## Folder Structure
 ```
 FLOW/
